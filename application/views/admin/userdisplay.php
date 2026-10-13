@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <!-- PAGE TITLE HERE -->
+    <title>Evently Admin</title>
+    <?= include_once('topscripts.php') ?>
+
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div>
+            <img src="images/pre.gif" alt="">
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <?= include_once('nav.php') ?>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <?= include_once("header.php") ?>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <?= include_once("sidebar.php") ?>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <!-- <div class="content-body">
+            <!-- row -->
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- container starts -->
+            <div class="container-fluid">
+
+                <!-- row -->
+
+                <div class="container-fluid pt-0 ps-0 pe-lg-4 pe-0">
+                    <div class="row">
+                        <!-- Column starts -->
+                        <div class="col-md-12">
+                            <div class="card dz-card" id="accordion-one">
+                                <div class="card-header flex-wrap">
+                                    <div>
+                                        <h4 class="card-title">Client Datatable</h4>
+
+                                    </div>
+
+                                </div>
+                                <!--tab-content-->
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="card-body pt-0">
+                                            <div class="table-responsive">
+                                                <table id="example" class="display table" style="min-width: 845px">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Profilepic</th>
+                                                            <th>Username</th>
+                                                            <th>Password</th>
+                                                            <th>Email</th>
+                                                            <th>Contact No</th>
+
+                                                            <th>City Name</th>
+                                                            <th>Status</th>
+                                                            <th>More Info</th>
+
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <?php
+                                                        foreach ($post as $p) {
+                                                        ?>
+                                                            <tr>
+                                                                <td><img style="height:50px;width: 50px;object-fit: cover;border:3px solid" class="rounded-circle border-primary" src="<?= base_url("resources/media/images/" . $p->profilepic) ?>" alt=""></td>
+
+                                                                <td class="text-capitalize"><?= $p->username ?></td>
+                                                                <td><?= $p->password ?></td>
+                                                                <td><?= $p->email ?></td>
+                                                                <td><?= $p->contactno ?></td>
+                                                                <td><?= $p->catname ?></td>
+                                                                <td>
+                                                                    <?php 
+                                                                if ($p->status==0) {
+                                                            ?>
+                                                                    <a class="btn btn-danger me-1" href="<?= site_url("admin/Admin/blockuser/$p->clientid") ?>"> Block</a>
+                                                                    <?php
+                                                                }
+                                                                    ?>
+                                                                          <?php 
+                                                                if ($p->status==1) {
+                                                            ?>
+                                                                    <a class="btn btn-success me-1" href="<?= site_url("admin/Admin/unblockuser/$p->clientid") ?>">Unblock</a>
+                                                                    <?php
+                                                                }
+                                                                ?>
+                                            </td>
+                                                                <td>
+
+                                                                    <div class="btn-link" data-bs-toggle="dropdown">
+                                                                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                                                <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                                                                <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                                                                <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                                                            </g>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                                        <a class="dropdown-item" href="<?= site_url("admin/Admin/moreinfo/$p->clientid") ?>">View Details</a>
+                                                                    </div>
+
+                                                                </td>
+                                                            </tr>
+                                                        <?php
+                                                        }
+                                                        ?>
+
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Profilepic</th>
+                                                            <th>Username</th>
+                                                            <th>Password</th>
+                                                            <th>Email</th>
+                                                            <th>Contactno</th>
+                                                            <th>Cityname</th>
+                                                            <th>Status</th>
+
+                                                            <th>More Info</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!-- /Default accordion -->
+                                    </div>
+
+                                    <!--/tab-content-->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column ends -->
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!--**********************************
+                Content body end
+            ***********************************-->
+        </div>
+
+
+
+
+    </div>
+    <?= include_once("bottomscripts.php") ?>
+
+</body>
+
+</html>
