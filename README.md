@@ -71,23 +71,6 @@ The database configuration is inside `application/config/database.php`:
 ```
 The base URL in `application/config/config.php` automatically detects your localhost domain and port.
 
-### 4. Open in Browser
-- **Home / Client Portal:** [http://localhost/mainproject/index.php/Home](http://localhost/mainproject/index.php/Home)
-- **Event Manager Portal:** [http://localhost/mainproject/index.php/User](http://localhost/mainproject/index.php/User)
-- **Admin Login:** [http://localhost/mainproject/index.php/admin/Admin/index](http://localhost/mainproject/index.php/admin/Admin/index)
-
----
-
-## Demo Accounts for Testing
-
-| Role | Username | Password |
-|---|---|---|
-| **Admin** | `admin` | `admin123` |
-| **Client** | `rahul_sharma` | `12345678` |
-| **Event Manager** | `royal_events` | `12345678` |
-
-*(You can also register a new client or event manager directly from the website).*
-
 ---
 
 ## Project Structure
