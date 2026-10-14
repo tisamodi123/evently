@@ -91,9 +91,3 @@ mainproject/
 ├── system/              # CodeIgniter 3 core files
 ├── index.php            # Main entry point
 └── .gitignore           # Git ignore rules
-```
-
----
-
-## License & Notes
-This project was built for educational and portfolio purposes. Feel free to fork and customize it.
